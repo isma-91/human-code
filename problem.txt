@@ -1,8 +1,13 @@
 START
 
 prendere la lista completa dei contenuti presenti sul sito
-creare la lista "contenuti consigliati per l'utente" vuota
-confrontare i contenuti già visti dall'utente e i contenuti che non ha ancora visto
+
+SE esiste la lista "contenuti consigliati per l'utente"
+- confrontare i contenuti già visti dall'utente e i contenuti che non ha ancora visto
+ALTRIMENTI
+- creare la lista "contenuti consigliati per l'utente" vuota
+- confrontare i contenuti già visti dall'utente e i contenuti che non ha ancora visto
+FINE SE
 
 SE un contenuto non visto ha un genere OPPURE una durata simili ad un contenuto già visto dall'utente
  - aggiungere il contenuto non visto alla lista "contenuti consigliati per l'utente" 
