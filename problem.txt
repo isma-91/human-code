@@ -1,0 +1,34 @@
+START
+
+prendere la lista completa dei contenuti presenti sul sito
+creare la lista "contenuti consigliati per l'utente" vuota
+confrontare i contenuti già visti dall'utente e i contenuti che non ha ancora visto
+
+SE un contenuto non visto ha un genere OPPURE una durata simili ad un contenuto già visto dall'utente
+ - aggiungere il contenuto non visto alla lista "contenuti consigliati per l'utente" 
+ ALTRIMENTI
+  -escludi il contenuto non visto dalla lista "contenuti consigliati per l'utente"
+FINE SE
+
+SE alla lista completa dei contenuti presenti sul sito viene aggiunto un contenuto che ha un nome simile OPPURE uguale ad un contenuto precedentemente visto dall'utente
+ - aggiungere il contenuto alla lista "contenuti consigliati per l'utente"
+FINE SE
+
+FINCHÈ (il contenuto aggiunto alla lista "contenuti consigliati per l'utente" non viene visto affatto entro 20 giorni)
+ - rimuovere il contenuto non visto affatto dalla lista "contenuti consigliati per l'utente"
+ - confrontare i contenuti più recenti visti dall'utente all'interno della lista completa dei contenuti presenti sul sito
+ - aggiungere un contenuto più simile alle ultime cose viste dall'utente alla lista "contenuti consigliati per l'utente"
+FINE FINCHÈ
+
+SE il contenuto aggiunto alla lista "contenuti consigliati per l'utente" è stato visto completamente
+ - Rimuovere il contenuto visto completamente dalla lista "contenuti consigliati per l'utente"
+ - cercare altri contenuti simili nella lista completa dei contenuti presenti sul sito 
+ - aggiungere il contenuto simile alla lista "contenuti consigliati per l'utente"
+ ALTRIMENTI
+ - creare lista "Continua a Guardare"
+ - inserire nella lista "Continua a Guardare" il contenuto iniziato, ma non finito di vedere
+FINE SE
+
+FINE
+
+
